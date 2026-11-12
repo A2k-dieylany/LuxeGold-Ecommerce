@@ -1,7 +1,9 @@
 FROM php:8.2-apache
 
-# Installer les extensions PHP nécessaires
-RUN docker-php-ext-install pdo pdo_mysql mysqli
+# Installer les extensions PHP nécessaires (MySQL local + PostgreSQL Aiven)
+RUN apt-get update && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql mysqli pdo_pgsql pgsql \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Activer le module Apache rewrite
 RUN a2enmod rewrite

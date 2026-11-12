@@ -6,11 +6,13 @@ services:
     branch: main
     plan: free
     envVars:
-      - key: MYSQL_HOST
+      - key: DB_HOST
         sync: false
-      - key: MYSQL_DB
+      - key: DB_NAME
         sync: false
-      - key: MYSQL_USER
+      - key: DB_USER
         sync: false
-      - key: MYSQL_PASS
+      - key: DB_PASS
+        sync: false
+      - key: DB_PORT
         sync: false

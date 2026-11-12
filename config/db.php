@@ -17,15 +17,14 @@ if (!isset($_SESSION['lang'])) {
 }
 
 // 4. CONNEXION BASE DE DONNÉES
-// Render.com : lit les variables d'environnement
-// Local (XAMPP) : fallback sur localhost
-$host = getenv('MYSQL_HOST') ?: 'localhost';
-$db   = getenv('MYSQL_DB')   ?: 'luxegold_db';
-$user = getenv('MYSQL_USER') ?: 'root';
-$pass = getenv('MYSQL_PASS') ?: '';
+// Production (Aiven PostgreSQL) : lit les variables d'environnement
+// Local (XAMPP) : fallback MySQL localhost
+$db_host = getenv('DB_HOST') ?: '';
+$db_name = getenv('DB_NAME') ?: '';
+$db_user = getenv('DB_USER') ?: '';
+$db_pass = getenv('DB_PASS') ?: '';
+$db_port = getenv('DB_PORT') ?: '5432';
 
-$charset = 'utf8mb4';
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -33,9 +32,17 @@ $options = [
 ];
 
 try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
+    if (!empty($db_host)) {
+        // --- MODE PRODUCTION : Aiven PostgreSQL (avec SSL) ---
+        $dsn = "pgsql:host=$db_host;port=$db_port;dbname=$db_name;sslmode=require";
+        $pdo = new PDO($dsn, $db_user, $db_pass, $options);
+    } else {
+        // --- MODE LOCAL : XAMPP MySQL ---
+        $dsn = "mysql:host=localhost;dbname=luxegold_db;charset=utf8mb4";
+        $pdo = new PDO($dsn, 'root', '', $options);
+    }
 } catch (\PDOException $e) {
-     die("Erreur de connexion : " . $e->getMessage());
+    die("Erreur de connexion : " . $e->getMessage());
 }
 
 // --- CHARGEMENT DES PARAMÈTRES GLOBAUX DU SITE ---
