@@ -347,6 +347,7 @@ $wishCount = $stmtWish->fetchColumn();
                 <ul class="nav-menu">
                     <li><a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>"><?= $lang['menu_home'] ?></a></li>
                     <li><a href="catalogue.php" class="<?= basename($_SERVER['PHP_SELF']) == 'catalogue.php' ? 'active' : '' ?>"><?= $lang['menu_collection'] ?></a></li>
+                    <li><a href="equipe.php" class="<?= basename($_SERVER['PHP_SELF']) == 'equipe.php' ? 'active' : '' ?>"><?= $lang['menu_team'] ?></a></li>
                     <li><a href="contact.php" class="<?= basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : '' ?>"><?= $lang['menu_contact'] ?></a></li>
                 </ul>
             </nav>

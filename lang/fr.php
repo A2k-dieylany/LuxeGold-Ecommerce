@@ -96,6 +96,22 @@ $lang = [
     'contact_send' => 'Envoyer',
 
     // --- FOOTER ---
-    'footer_text' => 'Bijouterie traditionnelle et moderne.'
+    'footer_text' => 'Bijouterie traditionnelle et moderne.',
+
+    // --- EQUIPE ---
+    'menu_team' => 'L\'Équipe',
+    'team_title' => 'Notre Équipe',
+    'team_subtitle' => 'Les artisans derrière vos bijoux',
+    'team_hero_text' => 'Découvrez les talents passionnés qui créent vos pièces d\'exception',
+    'team_values_title' => 'Nos Valeurs',
+    'team_values_subtitle' => 'Ce qui nous anime au quotidien',
+    'team_value_craft' => 'Savoir-Faire',
+    'team_value_craft_desc' => 'Un artisanat transmis de génération en génération, alliant tradition et modernité.',
+    'team_value_quality' => 'Excellence',
+    'team_value_quality_desc' => 'Chaque bijou est créé avec une attention méticuleuse aux détails et à la qualité.',
+    'team_value_passion' => 'Passion',
+    'team_value_passion_desc' => 'L\'amour du métier guide chacune de nos créations, pour votre plus grand plaisir.',
+    'team_value_trust' => 'Confiance',
+    'team_value_trust_desc' => 'Une relation de confiance bâtie avec nos clients depuis des années.'
 ];
 ?>

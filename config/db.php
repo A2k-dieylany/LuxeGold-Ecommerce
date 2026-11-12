@@ -17,18 +17,12 @@ if (!isset($_SESSION['lang'])) {
 }
 
 // 4. CONNEXION BASE DE DONNÉES
-if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
-    $host = 'localhost';
-    $db   = 'luxegold_db';
-    $user = 'root';
-    $pass = ''; 
-} else {
-    // Infos Hébergeur (à remplir plus tard pour la mise en ligne)
-    $host = 'localhost'; 
-    $db   = 'luxegold_db'; 
-    $user = 'root';    
-    $pass = ''; 
-}
+// Render.com : lit les variables d'environnement
+// Local (XAMPP) : fallback sur localhost
+$host = getenv('MYSQL_HOST') ?: 'localhost';
+$db   = getenv('MYSQL_DB')   ?: 'luxegold_db';
+$user = getenv('MYSQL_USER') ?: 'root';
+$pass = getenv('MYSQL_PASS') ?: '';
 
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

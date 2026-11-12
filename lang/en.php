@@ -96,6 +96,22 @@ $lang = [
     'contact_send' => 'Send',
 
     // --- FOOTER ---
-    'footer_text' => 'Traditional and modern jewelry.'
+    'footer_text' => 'Traditional and modern jewelry.',
+
+    // --- TEAM ---
+    'menu_team' => 'Team',
+    'team_title' => 'Our Team',
+    'team_subtitle' => 'The artisans behind your jewelry',
+    'team_hero_text' => 'Discover the passionate talents who create your exceptional pieces',
+    'team_values_title' => 'Our Values',
+    'team_values_subtitle' => 'What drives us every day',
+    'team_value_craft' => 'Craftsmanship',
+    'team_value_craft_desc' => 'A craft passed down through generations, blending tradition and modernity.',
+    'team_value_quality' => 'Excellence',
+    'team_value_quality_desc' => 'Every piece of jewelry is created with meticulous attention to detail and quality.',
+    'team_value_passion' => 'Passion',
+    'team_value_passion_desc' => 'The love for our craft guides every creation, for your greatest pleasure.',
+    'team_value_trust' => 'Trust',
+    'team_value_trust_desc' => 'A trusted relationship built with our clients over many years.'
 ];
 ?>

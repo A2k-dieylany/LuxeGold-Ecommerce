@@ -47,6 +47,11 @@
                         </a>
                     </li>
                     <li style="margin-bottom: 10px;">
+                        <a href="equipe.php" style="color: white; text-decoration: none; transition: 0.3s;">
+                            <i class="fas fa-chevron-right" style="font-size: 10px; color: var(--gold);"></i> <?= $lang['menu_team'] ?>
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
                         <a href="contact.php" style="color: white; text-decoration: none; transition: 0.3s;">
                             <i class="fas fa-chevron-right" style="font-size: 10px; color: var(--gold);"></i> <?= $lang['menu_contact'] ?>
                         </a>
